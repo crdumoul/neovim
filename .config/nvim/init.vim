@@ -11,16 +11,19 @@ filetype indent plugin on
 syntax on
 
 call plug#begin('~/.local/share/nvim/plugged')
-Plug 'haishanh/night-owl.vim'
+Plug 'sfi0zy/atlantic-dark.vim'
 Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'rust-lang/rust.vim'
 Plug 'majutsushi/tagbar'
 Plug 'kien/ctrlp.vim'
 Plug 'racer-rust/vim-racer'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
-colorscheme night-owl
+colorscheme atlantic-dark
 
 " Deoplete setup
 let g:deoplete#enable_at_startup = 1
@@ -44,6 +47,10 @@ nmap <F8> :TagbarToggle<CR>
 " CtrlP setup
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+
+" vim-airline setup
+let g:airline_theme='cobalt2'
+let g:airline#extensions#tabline#enabled = 1
 
 tnoremap <Esc> <C-\><C-n>
 nnoremap <silent> <C-n> :bp<CR>
