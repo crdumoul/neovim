@@ -1,0 +1,6 @@
+.local/bin/
+.local/include/
+.local/lib/
+.local/share/nvim/plugged/
+.local/share/nvim/rplugin.vim
+.local/share/nvim/shada/
