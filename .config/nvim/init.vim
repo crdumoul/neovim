@@ -61,6 +61,10 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 
+" Terminal setup
 tnoremap <Esc> <C-\><C-n>
+autocmd TermOpen * setlocal nonumber norelativenumber
+
+" Buffer switching shortcuts
 nnoremap <silent> <C-n> :bp<CR>
 nnoremap <silent> <C-m> :bn<CR>
