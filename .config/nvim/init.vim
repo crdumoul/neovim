@@ -5,7 +5,7 @@ set hidden
 set nocompatible
 set number
 set relativenumber
-set nohlsearch
+set hlsearch
 
 filetype indent plugin on
 syntax on
@@ -68,3 +68,14 @@ autocmd TermOpen * setlocal nonumber norelativenumber
 " Buffer switching shortcuts
 nnoremap <silent> <C-n> :bp<CR>
 nnoremap <silent> <C-m> :bn<CR>
+
+" Split switching shortcuts
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Tabs
+nnoremap <F1> :tabprev<CR>
+nnoremap <F2> :tabnext<CR>
+
