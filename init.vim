@@ -21,6 +21,7 @@ Plug 'racer-rust/vim-racer'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
+Plug 'chaoren/vim-wordmotion'
 call plug#end()
 
 colorscheme atlantic-dark
