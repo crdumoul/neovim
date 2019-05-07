@@ -24,6 +24,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
 Plug 'chaoren/vim-wordmotion'
+Plug 'mbbill/undotree'
 call plug#end()
 
 colorscheme atlantic-dark
@@ -85,3 +86,6 @@ nnoremap <F2> :tabnext<CR>
 " Quickfix navigation
 map <C-j> :cn<CR>
 map <C-k> :cp<CR>
+
+" undotree shortcut
+nnoremap <F5> :UndotreeToggle<CR>
