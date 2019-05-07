@@ -6,6 +6,8 @@ set nocompatible
 set number
 set relativenumber
 set hlsearch
+set undodir=~/.local/share/nvim/undo
+set undofile
 
 filetype indent plugin on
 syntax on
@@ -32,9 +34,9 @@ let g:deoplete#enable_at_startup = 1
 " RLS setup
 let g:LanguageClient_serverCommands = { 'rust': ['rls'] }
 let $RUST_BACKTRACE = 1
-let g:LanguageClient_loggingFile = '/tmp/LanguageClient.log'
-let g:LanguageClient_loggingLevel = 'INFO'
-let g:LanguageClient_serverStderr = '/tmp/LanguageServer.log'
+"let g:LanguageClient_loggingFile = '/tmp/LanguageClient.log'
+"let g:LanguageClient_loggingLevel = 'INFO'
+"let g:LanguageClient_serverStderr = '/tmp/LanguageServer.log'
 " Temporarily using racer for this because it's not working with my current Rust toolchain
 " nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 
@@ -80,3 +82,6 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <F1> :tabprev<CR>
 nnoremap <F2> :tabnext<CR>
 
+" Quickfix navigation
+map <C-j> :cn<CR>
+map <C-k> :cp<CR>
