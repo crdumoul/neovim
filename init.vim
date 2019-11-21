@@ -42,7 +42,9 @@ let $RUST_BACKTRACE = 1
 "let g:LanguageClient_loggingLevel = 'INFO'
 "let g:LanguageClient_serverStderr = '/tmp/LanguageServer.log'
 "let g:LanguageClient_useVirtualText = 0
- nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 
 " Racer setup
 "let g:racer_cmd = "racer"
@@ -81,10 +83,6 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-
-" Tabs
-nnoremap <F1> :tabprev<CR>
-nnoremap <F2> :tabnext<CR>
 
 " Quickfix navigation
 map <C-j> :cn<CR>
