@@ -9,6 +9,8 @@ set hlsearch
 set undodir=~/.local/share/nvim/undo
 set undofile
 set scrollback=100000
+set wildignore+=*.json
+set mouse=a
 
 filetype indent plugin on
 syntax on
