@@ -11,6 +11,7 @@ set undofile
 set scrollback=100000
 set wildignore+=*.json
 set mouse=a
+set completeopt-=preview
 
 filetype indent plugin on
 syntax on
@@ -22,7 +23,6 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'rust-lang/rust.vim'
 Plug 'majutsushi/tagbar'
 Plug 'kien/ctrlp.vim'
-Plug 'racer-rust/vim-racer'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
@@ -37,7 +37,7 @@ let g:deoplete#enable_at_startup = 1
 
 " RLS setup
 let g:LanguageClient_serverCommands = {
-	\ 'rust': ['rls'],
+	\ 'rust': ['rust-analyzer'],
         \ 'ruby': ['solargraph', 'stdio'],
 	\ }
 let $RUST_BACKTRACE = 1
@@ -48,10 +48,6 @@ let $RUST_BACKTRACE = 1
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
-
-" Racer setup
-"let g:racer_cmd = "racer"
-"au FileType rust nmap gd <Plug>(rust-def)
 
 " Tagbar setup
 nmap <F8> :TagbarToggle<CR>
