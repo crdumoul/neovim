@@ -12,14 +12,15 @@ set scrollback=100000
 set wildignore+=*.json
 set mouse=a
 set completeopt-=preview
+set updatetime=300
+set signcolumn=yes
 
 filetype indent plugin on
 syntax on
 
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'sfi0zy/atlantic-dark.vim'
-Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'rust-lang/rust.vim'
 Plug 'majutsushi/tagbar'
 Plug 'kien/ctrlp.vim'
@@ -32,22 +33,14 @@ call plug#end()
 
 colorscheme atlantic-dark
 
-" Deoplete setup
-let g:deoplete#enable_at_startup = 1
-
-" RLS setup
-let g:LanguageClient_serverCommands = {
-	\ 'rust': ['rust-analyzer'],
-        \ 'ruby': ['solargraph', 'stdio'],
-	\ }
-let $RUST_BACKTRACE = 1
-"let g:LanguageClient_loggingFile = '/tmp/LanguageClient.log'
-"let g:LanguageClient_loggingLevel = 'INFO'
-"let g:LanguageClient_serverStderr = '/tmp/LanguageServer.log'
-"let g:LanguageClient_useVirtualText = 0
-nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+" coc.nvim language client
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nmap <silent> <F2> <Plug>(coc-rename)
 
 " Tagbar setup
 nmap <F8> :TagbarToggle<CR>
