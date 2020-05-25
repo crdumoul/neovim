@@ -13,4 +13,4 @@ popd
 pip3 install neovim
 pip3 install --user pynvim
 nvim --headless +PlugInstall +qa
-nvim --headless +"CocInstall coc-rust-analyzer"
+nvim --headless +"CocInstall coc-rust-analyzer" +qa
