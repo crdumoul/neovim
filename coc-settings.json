@@ -1,4 +1,6 @@
 {
         "coc.preferences.diagnostic.virtualText": "true",
-	"rust-analyzer.diagnostics.disabled": ["unresolved-import"]
-}
+	"rust-analyzer.diagnostics.disabled": ["unresolved-import", "incorrect-ident-case"],
+        "rust-analyzer.cargo.loadOutDirsFromCheck": true,
+        "rust-analyzer.procMacro.enable": true
+

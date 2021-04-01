@@ -10,7 +10,7 @@ set undodir=~/.local/share/nvim/undo
 set undofile
 set scrollback=100000
 set wildignore+=*.json
-set mouse=a
+"set mouse=a
 set completeopt-=preview
 set updatetime=300
 set signcolumn=yes
