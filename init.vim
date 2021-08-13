@@ -52,6 +52,7 @@ let g:ctrlp_cmd = 'CtrlP'
 " vim-airline setup
 let g:airline_theme='cobalt2'
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#ignore_bufadd_pat='!|defx|gundo|nerd_tree|startify|tagbar|undotree|vimfiler'
 
 " The Silver Searcher
 if executable('ag')
