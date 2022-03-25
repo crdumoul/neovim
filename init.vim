@@ -83,3 +83,6 @@ map <C-k> :cp<CR>
 
 " undotree shortcut
 nnoremap <F5> :UndotreeToggle<CR>
+
+" Ruby settings
+autocmd FileType ruby setlocal autoindent noexpandtab tabstop=4 shiftwidth=4
