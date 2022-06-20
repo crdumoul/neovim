@@ -14,6 +14,7 @@ set wildignore+=*.json
 set completeopt-=preview
 set updatetime=300
 set signcolumn=yes
+set shell=bash
 
 filetype indent plugin on
 syntax on
