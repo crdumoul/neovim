@@ -10,7 +10,7 @@ set undodir=~/.local/share/nvim/undo
 set undofile
 set scrollback=100000
 set wildignore+=*.json
-"set mouse=a
+set mouse=
 set completeopt-=preview
 set updatetime=300
 set signcolumn=yes
@@ -21,7 +21,7 @@ syntax on
 
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'sfi0zy/atlantic-dark.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'rust-lang/rust.vim'
 Plug 'majutsushi/tagbar'
 Plug 'kien/ctrlp.vim'
@@ -30,19 +30,25 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
 Plug 'chaoren/vim-wordmotion'
 Plug 'mbbill/undotree'
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
+Plug 'neovim/nvim-lspconfig'
 call plug#end()
 
 colorscheme atlantic-dark
 
 " coc.nvim language client
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-nmap <silent> <F2> <Plug>(coc-rename)
-inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+"nmap <silent> [g <Plug>(coc-diagnostic-prev)
+"nmap <silent> ]g <Plug>(coc-diagnostic-next)
+"nmap <silent> gd <Plug>(coc-definition)
+"nmap <silent> gy <Plug>(coc-type-definition)
+"nmap <silent> gi <Plug>(coc-implementation)
+"nmap <silent> gr <Plug>(coc-references)
+"nmap <silent> <F2> <Plug>(coc-rename)
+"inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+
+lua require('init')
+lua require('lsp')
 
 " Tagbar setup
 nmap <F8> :TagbarToggle<CR>
