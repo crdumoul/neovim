@@ -42,3 +42,4 @@ popd
 nvim --headless +PlugInstall +qa
 nvim --headless +"LspInstall rust_analyzer" +qa
 nvim --headless +"LspInstall pyright" +qa
+nvim --headless +"LspInstall clangd" +qa
