@@ -7,9 +7,10 @@ mkdir -p $HOME/.local/share/nvim/site/autoload
 mkdir -p $HOME/.local/share/nvim/undo
 
 #install nodejs and npm (for mason-lspconfig)
-wget https://nodejs.org/dist/v18.15.0/node-v18.15.0-linux-x64.tar.xz
-tar xf node-v18.15.0-linux-x64.tar.xz --strip-components=1 -C ~/.local/
-rm node-v18.15.0-linux-x64.tar.xz
+NODE_VERSION=v22.13.1
+wget "https://nodejs.org/dist/${NODE_VERSION}/node-${NODE_VERSION}-linux-x64.tar.xz"
+tar xf node-${NODE_VERSION}-linux-x64.tar.xz --strip-components=1 -C ~/.local/
+rm node-${NODE_VERSION}-linux-x64.tar.xz
 
 #install unzip (for mason-lspconfig)
 sudo apt-get install -y unzip
@@ -29,10 +30,9 @@ cd ..
 rm -rf ctags
 
 # install nvim
-wget https://github.com/neovim/neovim/releases/download/stable/nvim.appimage
-chmod u+x nvim.appimage
-mv nvim.appimage $HOME/.local/bin/
-sudo ln -s $HOME/.local/bin/nvim.appimage $HOME/.local/bin/nvim
+wget https://github.com/neovim/neovim/releases/download/v0.10.4/nvim-linux-x86_64.tar.gz
+tar xf nvim-linux-x86_64.tar.gz -C ~/.local --strip-components=1
+rm nvim-linux-x86_64.tar.gz
 
 cp -R nvim $HOME/.config/
 pushd $HOME/.local/share/nvim/site/autoload
